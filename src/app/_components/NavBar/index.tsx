@@ -1,4 +1,4 @@
-import { ScanQrCodeIcon } from "lucide-react";
+import { ScanQrCodeIcon, MenuIcon } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -25,6 +25,17 @@ export function NavBar() {
         </Link>
 
         <Link
+          href="/myqrcodes"
+          className={
+            pathname === "/myqrcodes"
+              ? "font-bold text-green-700"
+              : "font-medium text-gray-800"
+          }
+        >
+          Meus QR Codes
+        </Link>
+
+        <Link
           href="/subscription"
           className={
             pathname === "/subscription"
@@ -34,17 +45,10 @@ export function NavBar() {
         >
           Planos
         </Link>
+      </div>
 
-        <Link
-          href="/about"
-          className={
-            pathname === "/about"
-              ? "font-bold text-green-700"
-              : "font-medium text-gray-800"
-          }
-        >
-          Sobre
-        </Link>
+      <div>
+        <MenuIcon size={36} className="text-gray-700" />
       </div>
     </nav>
   );
